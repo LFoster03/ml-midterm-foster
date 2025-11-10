@@ -135,63 +135,37 @@ cd mushroom-classification
 
 ### Train a Model
 
-Split data into 70% training and 30% test sets, maintaining class proportions (stratify=y).
+- I split data into a 70% training and a 30% test set, maintaining class proportions (stratify=y).
+- I trained a Decision Tree classifier to predict whether a mushroom is poisonous or edible.
 
-Trains a Decision Tree classifier using fit().
-
-Predicts on the test set.
-
-Evaluates performance with:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1-score
-
-Confusion matrix
-
-Full classification report
-
-In this section, we train a **Decision Tree classifier** to predict whether a mushroom is poisonous or edible.
-
-### 4.1 Split the Data
-- The dataset was split into **training (70%)** and **test (30%)** sets using `train_test_split`.  
-- The split was **stratified** by the target variable `poisonous` to maintain class balance between edible and poisonous mushrooms.  
-
-### 4.2 Train the Model
-- A **Decision Tree classifier** was trained using Scikit-Learn's `fit()` method on the training data (`X_train`, `y_train`).  
+#### Split the Data
+- The dataset was split into training (70%)** and test (30%) sets using train_test_split.  
+- The split was stratified by the target variable poisonous to maintain class balance between edible and poisonous mushrooms.  
+- A Decision Tree classifier was trained using Scikit-Learn's fit() method on the training data (X_train, y_train).  
 - Input features used for training:  
-  - `cap_look` (combined cap shape + color)  
-  - `odor`  
-  - `stalk-root`  
+  - cap_look (combined cap shape + color)  
+  - odor  
+  - stalk-root 
 
-### 4.3 Evaluate Performance
-- The model was evaluated using common **classification metrics**:
-  - **Accuracy** – proportion of correctly classified mushrooms.  
-  - **Precision** – proportion of predicted poisonous mushrooms that are truly poisonous.  
-  - **Recall** – proportion of actual poisonous mushrooms that were correctly identified.  
-  - **F1-score** – harmonic mean of precision and recall.  
-- Additionally, we generated a **confusion matrix** and a **full classification report** to inspect detailed performance.
+#### Evaluate Performance
+- The model was evaluated using common classification metrics:
+  - Accuracy – proportion of correctly classified mushrooms.  
+  - Precision – proportion of predicted poisonous mushrooms that are truly poisonous.  
+  - Recall – proportion of actual poisonous mushrooms that were correctly identified.  
+  - F1-score – harmonic mean of precision and recall.  
+- Additionally, I generated a confusion matrix and a full classification report to inspect detailed performance.
 
-### 4.4 Key Results
-- The Decision Tree model achieved **high accuracy** due to the strong predictive power of features like `odor` and `cap_look`.  
+#### Results
+- The Decision Tree model achieved high accuracy due to the strong predictive power of features.
 - The confusion matrix highlights how well the model distinguishes between edible and poisonous mushrooms.  
 - Overall, the model demonstrates the effectiveness of our feature selection and preprocessing steps.
 
-### 4.5 Next Steps
-- Compare the Decision Tree with alternative classifiers such as **Random Forest**, **Logistic Regression**, or **SVC**.  
-- Tune hyperparameters (e.g., tree depth, minimum samples per leaf) to further improve model performance.  
-- Visualize the confusion matrix as a heatmap for easier interpretation of misclassifications.
-
-### Reflection: 
+#### Reflection: 
 This model performed very well. The model performance metrics are all close to 99%.
-- Accuracy: 0.9979 → about 99.8% of mushrooms were correctly classified. This is very high and indicates your model is correctly predicting most samples.
+- Accuracy: 0.9979 → about 99.8% of mushrooms were correctly classified.
 - Precision: 0.9991 → of all mushrooms predicted as poisonous, 99.9% were actually poisonous. High precision means few false positives (few edible mushrooms were wrongly labeled as poisonous).
 - Recall: 0.9966 → of all actual poisonous mushrooms, 99.66% were correctly identified. High recall means few false negatives (few poisonous mushrooms were missed).
-- F1-score: 0.9979 → combines precision and recall. Close to 1 → your model balances precision and recall extremely well.
+- F1-score: 0.9979 → combines precision and recall. Close to 1.
 - Confusion matrix shows:
   - TP (1262): edible mushrooms correctly classified
   - FP (1): edible mushrooms incorrectly classified as poisonous
@@ -200,20 +174,17 @@ This model performed very well. The model performance metrics are all close to 9
 - Only 5 misclassifications out of 2438 test samples.
 
 
-### Section 5. Improve the Model or Try Alternates (Implement a Second Option)
+### Improve the Model or Try Alternates (Implement a Second Option)
+To evaluate whether a different modeling approach could improve performance, we trained a Random Forest classifier as an alternative to the Decision Tree.
 
-## 🔄 Section 5: Improve the Model / Try Alternative Classifiers
-
-To evaluate whether a different modeling approach could improve performance, we trained a **Random Forest classifier** as an alternative to the Decision Tree.
-
-### 5.1 Train an Alternative Model
-- **Random Forest** was trained using 100 estimators (`n_estimators=100`) with default hyperparameters.  
+#### Train an Alternative Model
+- Random Forest was trained using 100 estimators (n_estimators=100) with default hyperparameters.  
 - Same input features were used as in the Decision Tree:
-  - `cap_look` (cap shape + color)  
-  - `odor`  
-  - `stalk-root`  
+  - cap_look (cap shape + color)  
+  - odor  
+  - stalk-root  
 
-### 5.2 Compare Performance
+#### Compare Performance
 | Metric      | Decision Tree | Random Forest |
 |------------|---------------|---------------|
 | Accuracy   | 0.9979        | 0.9984        |
@@ -221,42 +192,29 @@ To evaluate whether a different modeling approach could improve performance, we 
 | Recall     | 0.9966        | 0.9974        |
 | F1-score   | 0.9979        | 0.9983        |
 
-- **Confusion Matrices** show very few misclassifications in both models, indicating that the dataset is highly predictable with these features.  
-- Random Forest slightly improved metrics over the Decision Tree, demonstrating the benefit of **ensemble methods** for stability and minor performance gains.
+- Confusion Matrices show very few misclassifications in both models, indicating that the dataset is highly predictable with these features.  
+- Random Forest slightly improved metrics over the Decision Tree, demonstrating the benefit of ensemble methods for stability and minor performance gains.
 
-### 5.3 Insights
-- Both models perform exceptionally well due to the highly predictive nature of features like `odor` and `cap_look`.  
+#### Insights
+- Both models perform exceptionally well due to the highly predictive nature of features like odor and cap_look.  
 - Random Forest offers slightly better recall, reducing the chance of missing poisonous mushrooms.  
-- The comparison supports that **ensemble methods** can provide small but meaningful improvements on top of simple tree-based models.  
+- The comparison supports that ensemble methods can provide small but meaningful improvements on top of simple tree-based models.  
 
-### 5.4 Next Steps
-- Hyperparameter tuning for Random Forest could further improve performance.  
-- Experiment with other classifiers like **Logistic Regression** or **SVC** for comparison.  
-- Visualize feature importance from the Random Forest to see which features are driving predictions.
-
-## 📝 Section 6: Final Thoughts & Insights
-
-### 6.1 Summary of Findings
-- The classification models were able to predict whether a mushroom is **poisonous or edible** with extremely high accuracy (>99%).  
+### Summary of Findings
+- The classification models were able to predict whether a mushroom is poisonous or edible with extremely high accuracy (>99%).  
 - Key features driving predictions:
-  - **Odor** – most predictive of poisonous mushrooms  
-  - **Cap_look** – combination of cap shape and color  
-  - **Stalk-root** – structural characteristic  
-- Both **Decision Tree** and **Random Forest** performed almost perfectly due to the strong predictive features.  
+  - Odor – most predictive of poisonous mushrooms  
+  - Cap_look – combination of cap shape and color  
+  - Stalk-root – structural characteristic  
+- Both Decision Tree and Random Forest performed almost perfectly due to the strong predictive features.  
 
-### 6.2 Challenges Faced
-- Handling the **missing values** in `stalk-root` required careful preprocessing; we imputed missing values as `"unknown"`.  
-- Encoding categorical features into a numerical format with **one-hot encoding** increased the number of features, which could become cumbersome for larger datasets.  
-- Ensuring proper **stratified splits** to maintain class balance required attention.  
+#### Challenges Faced
+- Handling the missing values in stalk-root required careful preprocessing; changed the missing values to "unknown".  
+- Encoding categorical features into a numerical format with one-hot encoding increased the number of features, which could become cumbersome for larger datasets.  
+- Ensuring proper stratified splits to maintain class balance required attention.  
 
-### 6.3 Next Steps
-- Experiment with **hyperparameter tuning** for Random Forest to optimize tree depth, number of estimators, and minimum samples per leaf.  
-- Try **additional classifiers** (Logistic Regression, Support Vector Machines) to compare robustness.  
-- Investigate **feature importance** to understand which mushroom characteristics are most critical for classification.  
-- Visualize **decision boundaries** or feature interactions to improve interpretability.  
-
-### Reflection 6: Learning from the Project
-- Learned how to **preprocess categorical data**, handle missing values, and perform one-hot encoding.  
-- Gained experience in **training, evaluating, and comparing multiple classifiers** for a real-world dataset.  
-- Developed skills in **interpreting performance metrics** like accuracy, precision, recall, F1-score, and confusion matrices.  
-- Reinforced the importance of **feature selection** and thoughtful preprocessing to achieve high-performing machine learning models.
+#### Learning from the Project
+- Learned how to preprocess categorical data, handle missing values, and perform one-hot encoding.  
+- Gained experience in training, evaluating, and comparing multiple classifiers for a real-world dataset.  
+- Developed skills in interpreting performance metrics like accuracy, precision, recall, F1-score, and confusion matrices.  
+- Reinforced the importance of feature selection and thoughtful preprocessing to achieve high-performing machine learning models.
