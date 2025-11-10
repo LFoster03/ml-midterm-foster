@@ -9,6 +9,10 @@
 This project applies **machine learning classification** techniques to predict whether a mushroom is **edible or poisonous** based on its physical characteristics.  
 The analysis follows a structured workflow including data exploration, preprocessing, feature selection, model training, evaluation, and comparison of multiple classifiers.
 
+## Project Files
+- [Jupyter Notebook: C:\Repos\ml-midterm-foster\classification_foster.ipynb](https://github.com/LFoster03/ml-midterm-foster/blob/main/classification_foster.ipynb)
+- [Peer Review: C:\Repos\ml-midterm-foster\peer_review.md](https://github.com/LFoster03/ml-midterm-foster/blob/main/peer_review.md)
+
 ## Imports Used
 ```from ucimlrepo import fetch_ucirepo 
 import pandas as pd
@@ -69,7 +73,8 @@ cd mushroom-classification
 .venv\Scripts\activate
 ```
 ### Install Dependencies
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
 ```
 ### Launch Notebook: classification_foster
 
@@ -110,8 +115,8 @@ cd mushroom-classification
 - Combined features like cap_look were created to capture interactions and patterns that improve model performance.
 
 #### Reflection
-> During data exploration, I identified key predictive features (odor and cap_look) and addressed missing values in stalk-root by imputing "unknown".  
-> One-hot encoding transformed categorical variables into numeric form suitable for modeling. Creating combined features, like cap_look, allowed the model to detect patterns that individual features alone might not capture.
+- During data exploration, I identified key predictive features (odor and cap_look) and addressed missing values in stalk-root by imputing "unknown".  
+- One-hot encoding transformed categorical variables into numeric form suitable for modeling. Creating combined features, like cap_look, allowed the model to detect patterns that individual features alone might not capture.
 
 ### Feature Selection and Justification
 - Features: cap_look, odor, stalk-root
@@ -156,9 +161,9 @@ cd mushroom-classification
 - Additionally, I generated a confusion matrix and a full classification report to inspect detailed performance.
 
 #### Results
-- The Decision Tree model achieved high accuracy due to the strong predictive power of features.
-- The confusion matrix highlights how well the model distinguishes between edible and poisonous mushrooms.  
-- Overall, the model demonstrates the effectiveness of our feature selection and preprocessing steps.
+> The Decision Tree model achieved high accuracy due to the strong predictive power of features.
+> The confusion matrix highlights how well the model distinguishes between edible and poisonous mushrooms.  
+> Overall, the model demonstrates the effectiveness of our feature selection and preprocessing steps.
 
 #### Reflection: 
 This model performed very well. The model performance metrics are all close to 99%.
@@ -196,9 +201,9 @@ To evaluate whether a different modeling approach could improve performance, we 
 - Random Forest slightly improved metrics over the Decision Tree, demonstrating the benefit of ensemble methods for stability and minor performance gains.
 
 #### Insights
-- Both models perform exceptionally well due to the highly predictive nature of features like odor and cap_look.  
-- Random Forest offers slightly better recall, reducing the chance of missing poisonous mushrooms.  
-- The comparison supports that ensemble methods can provide small but meaningful improvements on top of simple tree-based models.  
+> Both models perform exceptionally well due to the highly predictive nature of features like odor and cap_look.  
+> Random Forest offers slightly better recall, reducing the chance of missing poisonous mushrooms.  
+> The comparison supports that ensemble methods can provide small but meaningful improvements on top of simple tree-based models.  
 
 ### Summary of Findings
 - The classification models were able to predict whether a mushroom is poisonous or edible with extremely high accuracy (>99%).  
