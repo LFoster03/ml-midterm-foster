@@ -13,7 +13,7 @@
 
 3. Model Performance & Comparisons (Are the results and comparisons clearly explained?)
    - Yes, the results are explained well. You can see that the Logistic Regression model performed very well, achieving a high Accuracy (89%). The Decision Tree model did not perform as well as the Logistic Regression as its Accuracy was 74%. Decision Tree models are prone to overfitting when faced with a smaller dataset like this one. The relationship between the features and the target is closer to linear. 
-   - If I had done this dataset and had more time, I may have tried out all of the different models to see if there were two that had the best accuracy. 
+   - If I had done this dataset and had more time, I may have tried out all of the different models to see if there were two that had the best accuracy to compare.
 
 4. Reflection Quality (Are insights well thought out?)
    - Yes, the reflections are not only well thought out, they are also organized to be easily readable. It is professional yet not too technical. If I wanted to repeat this process, I could do so easily just by reading this notebook. 
