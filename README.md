@@ -10,8 +10,8 @@ This project applies **machine learning classification** techniques to predict w
 The analysis follows a structured workflow including data exploration, preprocessing, feature selection, model training, evaluation, and comparison of multiple classifiers.
 
 ## Project Files
-- [Jupyter Notebook: C:\Repos\ml-midterm-foster\classification_foster.ipynb](https://github.com/LFoster03/ml-midterm-foster/blob/main/classification_foster.ipynb)
-- [Peer Review: C:\Repos\ml-midterm-foster\peer_review.md](https://github.com/LFoster03/ml-midterm-foster/blob/main/peer_review.md)
+- [Jupyter Notebook: classification_foster.ipynb](https://github.com/LFoster03/ml-midterm-foster/blob/main/classification_foster.ipynb)
+- [Peer Review: peer_review.md](https://github.com/LFoster03/ml-midterm-foster/blob/main/peer_review.md)
 
 ## Imports Used
 ```from ucimlrepo import fetch_ucirepo 

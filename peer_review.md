@@ -1,6 +1,6 @@
 # Peer Review 
 Name; 
-[Peer Review:](https://github.com/s-golla/ml_classification_sgolla/blob/main/classification_sgolla.ipynb)
+[Peer Review: Saratachandra Golla](https://github.com/s-golla/ml_classification_sgolla/blob/main/classification_sgolla.ipynb)
 
 1. Clarity & Organization (Is the notebook structured and easy to follow?)
 
